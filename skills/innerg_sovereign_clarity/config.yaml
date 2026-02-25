@@ -1,0 +1,25 @@
+# InnerG Sovereign Clarity Configuration
+# ======================================
+# Thresholds for cognitive alignment analysis
+# Adjust based on sensitivity requirements
+
+# Minimum clarity score (0-100) to proceed without requesting clarification
+# Lower = more permissive, Higher = requires more explicit intent
+clarity_threshold: 60
+
+# Score (0-100) above which manipulation warning is triggered
+# Lower = more sensitive to manipulation patterns
+# Higher = only flags obvious manipulation attempts
+manipulation_threshold: 70
+
+# Minimum sovereignty alignment score (0-100) required
+# Measures how well an action preserves user autonomy
+# Lower = allows more dependency, Higher = prioritizes independence
+sovereignty_threshold: 65
+
+# Behavior flags
+behavior:
+  never_censor: true        # Analysis only, no blocking
+  never_override: true      # User makes final decisions
+  encourage_autonomy: true  # Prefer independence over dependency
+  long_term_focus: true     # Favor sustainable outcomes

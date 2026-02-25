@@ -1,7 +1,11 @@
 ---
 name: innerg_sovereign_clarity
 description: A modular cognitive-alignment skill that evaluates inputs, content, and proposed actions for manipulation risk, clarity, dependency exposure, long-term consequence, and sovereignty alignment. Provides analysis and recommendations without overriding autonomy.
-metadata: {"openclaw": {"emoji": "🧠", "requires": {}, "always": true}}
+metadata:
+  openclaw:
+    emoji: "🧠"
+    requires: {}
+    always: true
 ---
 
 # InnerG Sovereign Clarity Skill
@@ -89,18 +93,21 @@ Measures distraction vs signal in described environments.
 
 ## Configuration
 
-The skill supports the following configuration thresholds:
+Configuration is stored in `config.yaml`:
 
-- `clarity_threshold` (default: 60): Minimum clarity score to proceed without clarification
-- `manipulation_threshold` (default: 70): Score above which manipulation warning is issued
-- `sovereignty_threshold` (default: 65): Minimum sovereignty alignment required
+```yaml
+# Sovereign Clarity Configuration
+clarity_threshold: 60        # Minimum clarity score to proceed without clarification
+manipulation_threshold: 70   # Score above which manipulation warning is issued
+sovereignty_threshold: 65    # Minimum sovereignty alignment required
+```
 
 ## Behavior Rules
 
 1. **Never censor or block** - This skill analyzes but does not restrict
 2. **Never override execution** - Final decisions remain with the user
 3. **Provide analysis only** - Deliver insights, not commands
-4. **Return structured data** - Always use JSON format for outputs
+4. **Return structured data** - Always use YAML format for outputs
 5. **Encourage autonomy** - Prioritize user independence over dependency
 6. **Long-term alignment** - Favor sustainable outcomes over short-term optimization
 
@@ -120,22 +127,21 @@ Agent: I'll use innerg_sovereign_clarity to analyze this request.
 
 ## Output Format
 
-All functions return structured JSON data:
+All functions return structured YAML data:
 
-```json
-{
-  "analysis": "insightful observation",
-  "score": 75,
-  "recommendations": ["suggestion1", "suggestion2"],
-  "metadata": {
-    "processed_at": "2024-01-01T00:00:00Z",
-    "skill_version": "1.0"
-  }
-}
+```yaml
+analysis: "insightful observation"
+score: 75
+recommendations:
+  - "suggestion1"
+  - "suggestion2"
+metadata:
+  processed_at: "2026-02-25T00:00:00Z"
+  skill_version: "1.0"
 ```
 
 ---
 
 **Author:** InnerG Intelligence  
-**Version:** 1.0  
+**Version:** 1.1  
 **Type:** cognitive_alignment_layer
